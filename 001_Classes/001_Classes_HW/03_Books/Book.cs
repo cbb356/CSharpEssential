@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Classes
+﻿namespace Classes
 {
     internal class Book
     {
-        private Author _author;
-        private Title _title;
-        private Content _content;
+        private Author author;
+        private Title title;
+        private Content content;
         
         public string Author 
         { 
             set 
             { 
-                _author.Value = value;
+                author.Value = value;
             } 
         }
 
@@ -24,7 +18,7 @@ namespace Classes
         {
             set
             {
-                _title.Value = value;
+                title.Value = value;
             }
         }
 
@@ -32,29 +26,29 @@ namespace Classes
         {
             set
             {
-                _content.Value = value;
+                content.Value = value;
             }
         }
 
         public Book() 
         {
-            _author = new Author();
-            _title = new Title();
-            _content = new Content();
+            author = new Author();
+            title = new Title();
+            content = new Content();
         }
 
         public Book(string author, string title, string content) : this()
         {
-            _author.Value = author;
-            _title.Value = title;
-            _content.Value = content;
+            this.author.Value = author;
+            this.title.Value = title;
+            this.content.Value = content;
         }
 
         public void Show()
         {
-            _author.Show();
-            _title.Show();
-            _content.Show();
+            author.Show();
+            title.Show();
+            content.Show();
         }
     }
 }

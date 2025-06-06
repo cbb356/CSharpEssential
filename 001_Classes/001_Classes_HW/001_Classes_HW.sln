@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Rectangle", "02_Rectangl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Books", "03_Books\03_Books.csproj", "{33875E68-79CA-4BD4-99EC-DA6560D5643A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Address", "06_Address\06_Address.csproj", "{B6ABFD66-4769-4453-9E20-E010E588C4FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{33875E68-79CA-4BD4-99EC-DA6560D5643A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33875E68-79CA-4BD4-99EC-DA6560D5643A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33875E68-79CA-4BD4-99EC-DA6560D5643A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6ABFD66-4769-4453-9E20-E010E588C4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6ABFD66-4769-4453-9E20-E010E588C4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6ABFD66-4769-4453-9E20-E010E588C4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6ABFD66-4769-4453-9E20-E010E588C4FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
