@@ -32,22 +32,27 @@
         //Calculates and displays perimeter of the figure
         public void PerimeterCalculator()
         {
+            //Calculation
             double perimeter = 0;
-
-            for (int i = 0; i < points.Length; i++)
-            {
-                Point currentPoint = points[i];
-                Point nextPoint = points[(i + 1) % points.Length];
-                perimeter += LengthSide(currentPoint, nextPoint);
-            }
-
-            Console.Write($"The perimeter of the {figureName} with points ");
             for (int i = 0; i < points.Length - 1; i++)
             {
-                Console.Write($"{points[i].Name}({points[i].X}, {points[i].Y}), ");
+                Point currentPoint = points[i];
+                Point nextPoint = points[i + 1];
+                perimeter += LengthSide(currentPoint, nextPoint);
             }
-            Console.Write($"{points[points.Length - 1].Name}({points[points.Length - 1].X}, {points[points.Length - 1].Y}) ");
-            Console.WriteLine($"is {perimeter:F2}");
+            perimeter += LengthSide(points[(points.Length - 1)], points[0]);
+
+            //Displaying
+            Console.Write($"The perimeter of the {figureName} with points ");
+            for (int i = 0; i < points.Length; i++)
+            {
+                Console.Write($"{points[i].Name}({points[i].X}, {points[i].Y})");
+                if ( i < points.Length - 1 )
+                {
+                    Console.Write(", ");
+                }
+            }
+            Console.WriteLine($" is {perimeter:F2}");
         }
     }
 }
