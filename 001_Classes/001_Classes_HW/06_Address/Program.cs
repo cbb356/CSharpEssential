@@ -13,6 +13,9 @@
             address.Apartment = "86";
             Console.WriteLine($"The address is:\nIndex: {address.Index}\nCountry: {address.Country}\nCity: {address.City}\n" +
                 $"Street: {address.Street}\nHouse:{address.House}\nApartment:{address.Apartment}");
+
+            // Delay.
+            Console.ReadKey();
         }
     }
 }

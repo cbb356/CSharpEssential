@@ -21,9 +21,9 @@
             Rectangle rectangle = new Rectangle (side1, side2);
 
             Console.WriteLine($"The perimeter of the rectangle with sides {side1} and {side2} " +
-                $"is: {rectangle.Perimeter}");
+                $"is: {rectangle.Perimeter:F2}");
             Console.WriteLine($"The area of the rectangle with sides {side1} and {side2} " +
-                $"is: {rectangle.Area}");
+                $"is: {rectangle.Area:F2}");
 
             // Delay.
             Console.ReadKey();

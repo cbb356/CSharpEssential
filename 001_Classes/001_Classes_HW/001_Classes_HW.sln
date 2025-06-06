@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Books", "03_Books\03_Boo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Address", "06_Address\06_Address.csproj", "{B6ABFD66-4769-4453-9E20-E010E588C4FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_PerimeterCalculator", "04_PerimeterCalculator\04_PerimeterCalculator.csproj", "{E1F0D470-FD5F-4B10-ADE6-C87FDD7B03ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B6ABFD66-4769-4453-9E20-E010E588C4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6ABFD66-4769-4453-9E20-E010E588C4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6ABFD66-4769-4453-9E20-E010E588C4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1F0D470-FD5F-4B10-ADE6-C87FDD7B03ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1F0D470-FD5F-4B10-ADE6-C87FDD7B03ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1F0D470-FD5F-4B10-ADE6-C87FDD7B03ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1F0D470-FD5F-4B10-ADE6-C87FDD7B03ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
