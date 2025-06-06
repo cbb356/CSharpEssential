@@ -14,7 +14,7 @@ namespace Classes
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(Value);
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ResetColor();
         }
     }
 }
