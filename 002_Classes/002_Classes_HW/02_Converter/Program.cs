@@ -12,6 +12,9 @@
             Console.WriteLine($"{uah} UAH = {converter.ConvertUahUsd(uah):F2} USD");
             Console.WriteLine($"{uah} UAH = {converter.ConvertUahEur(uah):F2} EUR");
             Console.WriteLine($"{uah} UAH = {converter.ConvertUahGbp(uah):F2} GBP");
+
+            //Delay
+            Console.ReadKey();
         }
     }
 }

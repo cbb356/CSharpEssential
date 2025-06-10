@@ -6,6 +6,9 @@
         {
             User user = new User("user", "John", "Doe", 25);
             user.ShowUserInfo();
+
+            //Delay
+            Console.ReadKey();
         }
     }
 }

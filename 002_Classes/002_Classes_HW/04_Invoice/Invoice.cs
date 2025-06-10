@@ -2,12 +2,18 @@
 {
     internal class Invoice
     {
+        //Invoice credentials
         private readonly int account;
         private readonly string customer;
         private readonly string provider;
-        public string Article { get; set; }
-        public int Quantity { get; set; }
-        public double PricePerItem { get; set; }
+
+        //Goods quantity
+        private string article;
+        private int quantity;
+
+        //VAT
+        private const double VAT_RATE = 0.2;
+
         public Invoice(int account, string customer, string provider) 
         {
             this.account = account;
@@ -15,13 +21,29 @@
             this.provider = provider;
         }
 
-        public void TotalCost()
+        public void SetGoodsDetails(string article, int quantity)
         {
-            double totalCost = Quantity * PricePerItem;
-            double totalCostVAT = totalCost * 1.2;
-            Console.WriteLine($"Invoice {account}");
+            this.article = article;
+            this.quantity = quantity;
+        }
+
+        public void CalculateTotalCost(double price, bool includedVAT)
+        {
+            double totalCost = quantity * price;
+
+            Console.WriteLine($"Invoice #{account}");
             Console.WriteLine($"Customer: {customer}, Provider: {provider}");
-            Console.WriteLine($"The total cost for {Quantity} of {Article} is: {totalCost:F2} ({totalCostVAT:F2} including VAT)");
+            Console.Write($"The total cost for {quantity} of {article}s is: ");
+
+            if (includedVAT)
+            {
+                double totalCostVAT = totalCost * (1 + VAT_RATE);
+                Console.WriteLine($"{totalCost:F2} (including VAT)");
+            }
+            else
+            {
+                Console.WriteLine($"{totalCost:F2} (excluding VAT)");
+            }
         }
     }
 }
