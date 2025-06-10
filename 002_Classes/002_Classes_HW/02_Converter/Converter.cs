@@ -2,43 +2,44 @@
 {
     internal class Converter
     {
-        private double usd;
-        private double eur;
-        private double gbp;
+        public double Usd { get; set; }
+        public double Eur { get; set; }
+        public double Gbp { get; set; }
+
         public Converter(double usd, double eur, double gbp)
         {
-            this.usd = usd;
-            this.eur = eur; 
-            this.gbp = gbp;
+            Usd = usd;
+            Eur = eur; 
+            Gbp = gbp;
         }
 
         public double ConvertUsdUah(double sum)
         { 
-            return sum * usd;
+            return sum * Usd;
         }
 
         public double ConvertEurUah(double sum)
         {
-            return sum * eur;
+            return sum * Eur;
         }
 
         public double ConvertGbpUah(double sum)
         {
-            return sum * gbp;
+            return sum * Gbp;
         }
         public double ConvertUahUsd(double sum)
         {
-            return sum / usd;
+            return sum / Usd;
         }
 
         public double ConvertUahEur(double sum)
         {
-            return sum / eur;
+            return sum / Eur;
         }
 
         public double ConvertUahGbp(double sum)
         {
-            return sum / gbp;
+            return sum / Gbp;
         }
     }
 }
