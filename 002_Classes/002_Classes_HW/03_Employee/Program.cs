@@ -7,37 +7,42 @@
             Employee ceo = new Employee("John", "Doe")
             {
                 Position = "CEO",
-                Tenure = 12
+                StartEmployment = new DateTime(2013, 4, 16)
             };
             ceo.ShowEmployeerInfo();
+            Console.WriteLine();
 
             Employee manager = new Employee("Sarah", "Connor")
             {
                 Position = "Manager",
-                Tenure = 8
+                StartEmployment = new DateTime(2017, 10, 5)
             };
             manager.ShowEmployeerInfo();
+            Console.WriteLine();
 
             Employee engineer = new Employee("Peter", "O'Brien")
             {
                 Position = "Engineer",
-                Tenure = 10
+                StartEmployment = new DateTime(2015, 6, 10)
             };
             engineer.ShowEmployeerInfo();
+            Console.WriteLine();
 
             Employee worker = new Employee("Jack", "Smith")
             {
                 Position = "Worker",
-                Tenure = 3
+                StartEmployment = new DateTime(2022, 2, 24)
             };
             worker.ShowEmployeerInfo();
+            Console.WriteLine();
 
-            Employee intern = new Employee("Donald", "Trump")
+            Employee intern = new Employee("Donald", "Duck")
             {
                 Position = "Intern",
-                Tenure = 0
+                StartEmployment = new DateTime(2025, 5, 12)
             };
             intern.ShowEmployeerInfo();
+            Console.WriteLine();
 
             //Delay
             Console.ReadKey();

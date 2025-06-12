@@ -5,7 +5,7 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Position { get; set; }
-        public int Tenure { get; set; }
+        public DateTime StartEmployment { get; set; }
 
         private const double TAX_RATE = 0.15;
         private const double BONUS_RATE = 0.1;
@@ -30,10 +30,24 @@
             return baseSalary;
         }
 
+        public int Tenure()
+        {
+            DateTime endDate = DateTime.Now;
+            int years = endDate.Year - StartEmployment.Year;
+
+            if (StartEmployment.Month > endDate.Month || (StartEmployment.Month == endDate.Month && StartEmployment.Day > endDate.Day))
+            {
+                years--;
+            }
+            return years;
+        }
+
         public void ShowEmployeerInfo()
         {
-            double salary = GetBaseSalary(Position) * (1 + BONUS_RATE * Tenure);
-            Console.WriteLine($"{Position} {FirstName} {LastName} has a salary of {salary}, and the tax due is {salary * TAX_RATE}");
+            int tenure = Tenure();
+            double salary = GetBaseSalary(Position) * (1 + BONUS_RATE * tenure);
+            Console.WriteLine($"{Position} {FirstName} {LastName} has been working for {tenure} years");
+            Console.WriteLine($"The employeer has a salary of {salary:F2}, and the tax due is {salary * TAX_RATE:F2}");
         }
     }
 }
