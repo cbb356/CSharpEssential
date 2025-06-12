@@ -14,7 +14,7 @@
             this.firstName = firstName;
             this.lastName = lastName;
             this.age = age;
-            this.registeredAt = DateTime.Now;
+            registeredAt = DateTime.Now;
         }
 
         public void ShowUserInfo()

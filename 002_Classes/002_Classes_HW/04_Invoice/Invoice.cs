@@ -27,23 +27,15 @@
             this.quantity = quantity;
         }
 
-        public void CalculateTotalCost(double price, bool includedVAT)
+        public void CalculateTotalCost(double price)
         {
             double totalCost = quantity * price;
 
             Console.WriteLine($"Invoice #{account}");
             Console.WriteLine($"Customer: {customer}, Provider: {provider}");
-            Console.Write($"The total cost for {quantity} of {article}s is: ");
-
-            if (includedVAT)
-            {
-                double totalCostVAT = totalCost * (1 + VAT_RATE);
-                Console.WriteLine($"{totalCost:F2} (including VAT)");
-            }
-            else
-            {
-                Console.WriteLine($"{totalCost:F2} (excluding VAT)");
-            }
+            Console.WriteLine($"The total cost for {quantity} of {article}s is: ");
+            Console.WriteLine($"{totalCost:F2} (excluding VAT)");
+            Console.WriteLine($"{totalCost * (1 + VAT_RATE):F2} (including VAT)");
         }
     }
 }
