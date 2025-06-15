@@ -15,7 +15,42 @@
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Pupil excelentPupil1 = new ExcelentPupil()
+            { 
+                Name = "John Doe"
+            };
+
+            Pupil excelentPupil2 = new ExcelentPupil()
+            {
+                Name = "Mary Stewart"
+            };
+
+            Pupil goodPupil1 = new GoodPupil()
+            {
+                Name = "William Smith"
+            };
+
+            Pupil goodPupil2 = new GoodPupil()
+            {
+                Name = "Jane little"
+            };
+
+            Pupil badPupil = new BadPupil()
+            {
+                Name = "Jack Reaper"
+            };
+
+            ClassRoom classRoom1 = new ClassRoom(excelentPupil1, goodPupil1, goodPupil2, badPupil);
+            classRoom1.ShowPupilsInfo();
+
+            ClassRoom classRoom2 = new ClassRoom(excelentPupil1, goodPupil1, badPupil);
+            classRoom2.ShowPupilsInfo();
+
+            ClassRoom classRoom3 = new ClassRoom(excelentPupil1, badPupil);
+            classRoom3.ShowPupilsInfo();
+
+            ClassRoom classRoom4 = new ClassRoom();
+            classRoom4.ShowPupilsInfo();
         }
     }
 }
