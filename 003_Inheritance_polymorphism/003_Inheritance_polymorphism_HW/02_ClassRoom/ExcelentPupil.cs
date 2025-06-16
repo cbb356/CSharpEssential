@@ -2,6 +2,8 @@
 {
     internal class ExcelentPupil: Pupil
     {
+        public ExcelentPupil(string name) : base(name) { }
+
         public override void Study()
         {
             Console.WriteLine("The pupil studies very well");

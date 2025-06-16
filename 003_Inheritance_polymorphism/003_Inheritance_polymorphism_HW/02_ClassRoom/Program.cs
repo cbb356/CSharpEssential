@@ -15,30 +15,11 @@
 
         static void Main(string[] args)
         {
-            Pupil excelentPupil1 = new ExcelentPupil()
-            { 
-                Name = "John Doe"
-            };
-
-            Pupil excelentPupil2 = new ExcelentPupil()
-            {
-                Name = "Mary Stewart"
-            };
-
-            Pupil goodPupil1 = new GoodPupil()
-            {
-                Name = "William Smith"
-            };
-
-            Pupil goodPupil2 = new GoodPupil()
-            {
-                Name = "Jane little"
-            };
-
-            Pupil badPupil = new BadPupil()
-            {
-                Name = "Jack Reaper"
-            };
+            Pupil excelentPupil1 = new ExcelentPupil("John Doe");
+            Pupil excelentPupil2 = new ExcelentPupil("Mary Stewart");
+            Pupil goodPupil1 = new GoodPupil("William Smith");
+            Pupil goodPupil2 = new GoodPupil("Jane little");
+            Pupil badPupil = new BadPupil("Jack Reaper");
 
             ClassRoom classRoom1 = new ClassRoom(excelentPupil1, goodPupil1, goodPupil2, badPupil);
             classRoom1.ShowPupilsInfo();
@@ -51,6 +32,12 @@
 
             ClassRoom classRoom4 = new ClassRoom();
             classRoom4.ShowPupilsInfo();
+
+            ClassRoom classRoom5 = new ClassRoom(null);
+            classRoom5.ShowPupilsInfo();
+
+            ClassRoom classRoom6 = new ClassRoom(excelentPupil1, excelentPupil2, goodPupil1, goodPupil2, badPupil);
+            classRoom6.ShowPupilsInfo();
         }
     }
 }

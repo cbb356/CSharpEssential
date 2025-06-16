@@ -4,6 +4,11 @@
     {
         public string Name { get; set; }
 
+        public Pupil (string name)
+        {
+            Name = name;
+        }
+
         public virtual void Study()
         {
             Console.WriteLine("The pupil studies");
