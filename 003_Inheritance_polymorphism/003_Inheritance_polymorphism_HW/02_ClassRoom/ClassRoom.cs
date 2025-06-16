@@ -3,44 +3,44 @@
     internal class ClassRoom
     {
         private Pupil[] pupils;
-        private const int numberOfPupils = 4;
+        private const int NumberOfPupils = 4;
 
         public ClassRoom(params Pupil[] pupils) 
         {
-            this.pupils = new Pupil[numberOfPupils];
+            this.pupils = new Pupil[NumberOfPupils];
 
             if (pupils == null || pupils.Length == 0)
             {
-                Console.WriteLine($"No pupil was submitted. {numberOfPupils} default pupils were added to the class.");
-                for (int i = 0; i < numberOfPupils; i++)
+                Console.WriteLine($"No pupil was submitted. {NumberOfPupils} default pupils were added to the class.");
+                for (int i = 0; i < NumberOfPupils; i++)
                 {
                     this.pupils[i] = new Pupil("Default");
                 }
             }
-            else if (pupils.Length == numberOfPupils)
+            else if (pupils.Length > NumberOfPupils)
             {
-                Console.WriteLine($"{numberOfPupils} pupils were submitted. All pupils were added to the class.");
-                this.pupils = pupils;
-            }
-            else if (pupils.Length > numberOfPupils)
-            {
-                Console.WriteLine($"{pupils.Length} pupils were submitted. Only the first {numberOfPupils} pupils were added to the class.");
-                for (int i = 0; i < numberOfPupils; i++)
+                Console.WriteLine($"{pupils.Length} pupils were submitted. Only the first {NumberOfPupils} pupils were added to the class.");
+                for (int i = 0; i < NumberOfPupils; i++)
                 {
                     this.pupils[i] = pupils[i];
                 }
             }
-            else if (pupils.Length < numberOfPupils)
+            else if (pupils.Length < NumberOfPupils)
             {
-                Console.WriteLine($"Only {pupils.Length} pupil(s) was/were submitted. {(numberOfPupils - pupils.Length)} default pupil(s) was/were added to the class.");
+                Console.WriteLine($"Only {pupils.Length} pupil(s) was/were submitted. {(NumberOfPupils - pupils.Length)} default pupil(s) was/were added to the class.");
                 for (int i = 0; i < pupils.Length; i++)
                 {
                     this.pupils[i] = pupils[i];
                 }
-                for (int i = pupils.Length; i < numberOfPupils; i++)
+                for (int i = pupils.Length; i < NumberOfPupils; i++)
                 {
                     this.pupils[i] = new Pupil("Default");
                 }
+            }
+            else
+            {
+                Console.WriteLine($"{NumberOfPupils} pupils were submitted. All pupils were added to the class.");
+                this.pupils = pupils;
             }
         }
 
