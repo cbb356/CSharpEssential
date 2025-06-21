@@ -18,7 +18,7 @@
 
             while (true)
             {
-                Console.WriteLine("\nInput the document type (XML, TXT, DOC) or \"exit\": ");
+                Console.WriteLine("\nInput the document type (XML, TXT, DOC) or \"quit\": ");
                 documentType = Console.ReadLine().Trim().ToUpper();
 
                 switch (documentType)
@@ -32,7 +32,7 @@
                     case "DOC":
                         handler = new DOCHandler();
                         break;
-                    case "EXIT":
+                    case "QUIT":
                         Console.WriteLine("Exiting program...");
                         return;
                     default:
