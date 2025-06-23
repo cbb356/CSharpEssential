@@ -1,31 +1,35 @@
 ﻿namespace Dictionary
 {
+    internal class Word
+    {
+        public string Ukrainian { get; set; }
+        public string Russian { get; set; }
+        public string English { get; set; }
+    }
+
     internal class Dictionary
     {
-        private string[,] dict = new string[5,3];
+        private Word[] dict = new Word[5];
 
         public Dictionary()
         {
-            dict[0,0] = "книга"; dict[0,1] = "книга"; dict[0,2] = "book";
-            dict[1,0] = "ручка"; dict[1,1] = "ручка"; dict[1,2] = "pen";
-            dict[2,0] = "сонце"; dict[2,1] = "солнце"; dict[2,2] = "sun";
-            dict[3,0] = "яблуко"; dict[3,1] = "яблоко"; dict[3,2] = "apple";
-            dict[4,0] = "стіл"; dict[4,1] = "стол"; dict[4,2] = "table";
+            dict[0] = new Word { Ukrainian = "книга", Russian = "книга", English = "book" };
+            dict[1] = new Word { Ukrainian = "ручка", Russian = "ручка", English = "pen" };
+            dict[2] = new Word { Ukrainian = "сонце", Russian = "солнце", English = "sun" };
+            dict[3] = new Word { Ukrainian = "яблуко", Russian = "яблоко", English = "apple" };
+            dict[4] = new Word { Ukrainian = "стіл", Russian = "стол", English = "table" };
         }
 
         public string this[string index]
         {
             get
             {
-                for (int i = 0; i < dict.GetLength(0); i++)
+                for (int i = 0; i < dict.Length; i++)
                 {
-                    for (int j = 0; j < dict.GetLength(1); j++)
-                    {
-                        if (dict[i, j] == index)
-                            return dict[i, 0] + "(укр.) - " + dict[i, 1] + "(рос.) - " + dict[i, 2] + "(англ.)";
-                    }
+                    if (dict[i].Ukrainian == index || dict[i].Russian == index || dict[i].English == index)
+                        return dict[i].Ukrainian + "(укр.) - " + dict[i].Russian + "(рос.) - " + dict[i].English + "(англ.)";
                 }
-                
+
                 return string.Format("{0} - немає перекладу для цього слова.", index);
             }
         }
@@ -34,8 +38,8 @@
         {
             get
             {
-                if (index >= 0 && index < dict.GetLength(0))
-                    return dict[index, 0] + "(укр.) - " + dict[index, 1] + "(рос.) - " + dict[index, 2] + "(англ.)";
+                if (index >= 0 && index < dict.Length)
+                    return dict[index].Ukrainian + "(укр.) - " + dict[index].Russian + "(рос.) - " + dict[index].English + "(англ.)";
                 else
                     return "Спроба звернення за межі масиву.";
             }
