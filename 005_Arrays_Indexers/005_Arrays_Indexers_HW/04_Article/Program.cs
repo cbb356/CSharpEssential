@@ -20,7 +20,7 @@
             Console.WriteLine(store[3]);
             Console.WriteLine(store[5]);    //Error: Out of bound
 
-            Console.WriteLine("Enter the name of the goods article:");
+            Console.WriteLine("Enter the name of the article:");
             string articleName = Console.ReadLine().Trim().ToLower();
             Console.WriteLine(store[articleName]);
             
