@@ -7,16 +7,6 @@ namespace MyMatrix
         private Random random = new Random(); 
         private int[,] matrix;
 
-        public int Rows
-        {
-            get { return matrix.GetLength(0); }
-        }
-        public int Columns
-        {
-            get { return matrix.GetLength(1); }
-        }
-
-
         public MyMatrix(int rows, int columns)
         {
             matrix = new int[rows, columns];
@@ -31,10 +21,13 @@ namespace MyMatrix
 
         public void PrintMatrix()
         {
-            Console.WriteLine("The matrix with {0} rows and {1} columns:", Rows, Columns);
-            for (int i = 0; i < Rows; i++)
+            int rows = matrix.GetLength(0);
+            int columns = matrix.GetLength(1);
+
+            Console.WriteLine("The matrix with {0} rows and {1} columns:", rows, columns);
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < Columns; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     Console.Write(matrix[i, j] + "\t");
                 }
@@ -46,8 +39,8 @@ namespace MyMatrix
         { 
             int[,] newMatrix = new int[newRows, newColumns];
 
-            int oldRows = Rows;
-            int oldColumns= Columns;
+            int oldRows = matrix.GetLength(0);
+            int oldColumns= matrix.GetLength(1);
 
             for (int i = 0; i < newRows; i++)
             {
