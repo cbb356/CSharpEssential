@@ -1,17 +1,39 @@
-﻿namespace Book
+﻿using System.Text;
+
+namespace Book
 {
     /*
      * Використовуючи Visual Studio, створіть проект за шаблоном Console Application. 
      * Потрібно: Створити статичний клас FindAndReplaceManager з методом void FindNext (string str) 
-     * для пошуку по книзі з прикладу уроку 005_Delegation. 
+     * для пошуку по книзі з прикладу уроку 005_Book. 
      * При виклику цього методу, проводиться послідовний пошук рядка в книзі. 
      */
+
+    internal class Book
+    {
+        public void FindNext(string str)
+        {
+            Console.WriteLine("Пошук рядка : " + str);
+        }
+    }
+
+    internal static class FindAndReplaceManager
+    {
+        public static void FindNext(string str)
+        {
+            Book book = new Book();
+            book.FindNext(str);
+        }
+    }
 
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            FindAndReplaceManager.FindNext("Text");
+            
+            // Delay.
+            Console.ReadKey();
         }
     }
 }

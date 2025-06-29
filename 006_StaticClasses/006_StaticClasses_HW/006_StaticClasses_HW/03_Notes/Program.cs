@@ -1,4 +1,4 @@
-﻿namespace Notes
+﻿namespace Book
 {
     /*
      * Використовуючи Visual Studio, створіть проект за шаблоном Console Application. 
@@ -6,11 +6,21 @@
      * який дозволить зберігати замітки читача. 
      */
 
+    internal class Book
+    {
+        public void FindNext(string str)
+        {
+            Console.WriteLine("Пошук рядка : " + str);
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            
+            
+            // Delay.
+            Console.ReadKey();
         }
     }
 }
