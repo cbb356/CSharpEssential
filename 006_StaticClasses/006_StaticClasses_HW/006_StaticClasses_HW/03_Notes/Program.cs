@@ -2,7 +2,7 @@
 {
     /*
      * Використовуючи Visual Studio, створіть проект за шаблоном Console Application. 
-     * Розширте приклад уроку 005_Delegation, створивши в класі Book, вкладений клас Notes, 
+     * Розширте приклад уроку 005_Book, створивши в класі Book, вкладений клас Notes, 
      * який дозволить зберігати замітки читача. 
      */
 
@@ -11,6 +11,11 @@
         public void FindNext(string str)
         {
             Console.WriteLine("Пошук рядка : " + str);
+        }
+
+        public class Notes
+        {
+
         }
     }
     internal class Program
