@@ -8,7 +8,25 @@
     {
         public static void SortArray(this int[] array)
         {
-            Array.Sort(array);
+            for (int i = 0; i < array.Length; i++)
+            {
+                //Get Index of the element with minimal value
+                int minValue = array[i];
+                int minValueIndex = i;
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (minValue >= array[j])
+                    {
+                        minValue = array[j];
+                        minValueIndex = j;
+                    }
+                }
+
+                //Swap array elements 
+                int temp = array[i];
+                array[i] = array[minValueIndex];
+                array[minValueIndex] = temp;
+            }
         }
     }
 
@@ -41,9 +59,9 @@
                 array[i] = random.Next(0, 100);
             }
 
-            ShowArray("Initial array:", array);
+            ShowArray("Initial array: ", array);
             array.SortArray();
-            ShowArray("Sorted array:", array);
+            ShowArray("Sorted array: ", array);
 
             // Delay.
             Console.ReadKey();

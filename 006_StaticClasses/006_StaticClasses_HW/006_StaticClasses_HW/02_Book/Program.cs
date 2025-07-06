@@ -19,9 +19,10 @@ namespace Book
 
     internal static class FindAndReplaceManager
     {
+        static private Book book = new Book();
+
         public static void FindNext(string str)
         {
-            Book book = new Book();
             book.FindNext(str);
         }
     }

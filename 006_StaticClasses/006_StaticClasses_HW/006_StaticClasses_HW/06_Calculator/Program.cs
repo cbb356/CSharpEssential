@@ -10,11 +10,13 @@
     {
         static void Main(string[] args)
         {
-            Calculator.Addition(5, 10);
-            Calculator.Subtraction(5, 10);
-            Calculator.Multiplication(5, -10);
-            Calculator.Division(5, 10);
-            Calculator.Division(5, 0);
+            int x = 5;
+            int y = 10;
+
+            Console.WriteLine($"{x} + {y} = {Calculator.Addition(x, y)}");
+            Console.WriteLine($"{x} - {y} = {Calculator.Subtraction(x, y)}");
+            Console.WriteLine($"{x} * {y} = {Calculator.Multiplication(x, y)}");
+            Console.WriteLine($"{x} / {y} = {Calculator.Division(x, y)}");
 
             // Delay.
             Console.ReadKey();
