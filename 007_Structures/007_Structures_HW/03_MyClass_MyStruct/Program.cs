@@ -13,9 +13,29 @@
 
     internal class Program
     {
+        internal static void ClassTaker(MyClass myClass)
+        {
+            myClass.change = "changed";
+        }
+
+        internal static void StructTaker(MyStruct myStruct)
+        {
+            myStruct.change = "changed";
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            MyClass myClass = new MyClass();
+            MyStruct myStruct = new MyStruct();
+            myClass.change = "not changed"; 
+            myStruct.change = "not changed";
+            ClassTaker(myClass);
+            StructTaker(myStruct);
+            Console.WriteLine($"The value of the change field for MyClass: {myClass.change}");
+            Console.WriteLine($"The value of the change field for MyStruct: {myStruct.change}");
+            
+            // Delay.
+            Console.ReadKey();
         }
     }
 }
