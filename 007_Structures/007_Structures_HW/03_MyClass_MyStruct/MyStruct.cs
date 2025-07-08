@@ -1,6 +1,6 @@
 ﻿namespace MyClass_MyStruct
 {
-    internal class MyStruct
+    internal struct MyStruct
     {
         public string change;
     }
