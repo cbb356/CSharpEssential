@@ -15,7 +15,7 @@
 
         public override string ToString()
         {
-            return ($"Destination: {Destination}\tTrain number: {Number}\tDeparture time: {DepartureTime:HH:mm}");
+            return ($"Destination: {Destination}\tNumber: {Number}\tDeparture time: {DepartureTime:HH:mm}");
         }
     }
 }

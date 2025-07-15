@@ -105,7 +105,7 @@ namespace Train
 
         static void Main(string[] args)
         {
-            const int TrainsNumber = 8;
+            const int TrainsNumber = 2;
             //Create and fill train's array
             Train[] trains = new Train[TrainsNumber];
             Console.WriteLine($"Enter the data for {TrainsNumber} trains");
