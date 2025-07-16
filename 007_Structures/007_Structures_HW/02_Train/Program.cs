@@ -14,18 +14,20 @@
         static void Main(string[] args)
         {
             const int TrainsNumber = 8;
-            //Create and fill train's array
-            Train[] trains = TrainHelpers.CreateTrainsSchedule(TrainsNumber);
-            //Create and fill random train's array
-            //Train[] trains = TrainHelpers.GenerateTrainsSchedule(TrainsNumber);
+            //Create object with train's array
+            TrainsSchedule trainsSchedule = new TrainsSchedule(TrainsNumber);
+            //Fill array with trains entered by user
+            trainsSchedule.InputTrainsSchedule();
+            //Fill array with random trains
+            //trainsSchedule.GenerateTrainsSchedule();
             //Sort array
-            TrainHelpers.SortTrains(trains);
+            trainsSchedule.SortTrains();
             //Show array
             Console.WriteLine();
-            TrainHelpers.ShowTrains(trains);
+            trainsSchedule.ShowTrains();
             //Show train with entered bumber
             Console.WriteLine();
-            TrainHelpers.ShowTrainWithNumber(trains);
+            trainsSchedule.ShowTrainByNumber();
 
             // Delay.
             Console.ReadKey();
