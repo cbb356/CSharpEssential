@@ -48,30 +48,53 @@ namespace Train
                 Console.Write("Enter the time (HH:MM) of the train departure: ");
             }
 
-            //Create train
+            //Train creation
             return new Train(trainDestination, trainNumber, trainDepartureTime);
         }
 
-        internal static void SortArray(Train[] trains)
+        private static Train[] CreateTrainsSchedule(int TrainsNumber)
         {
+            Train[] trains = new Train[TrainsNumber];
+
+            Console.WriteLine($"Enter the data for {TrainsNumber} trains");
             for (int i = 0; i < trains.Length; i++)
             {
-                for (int j = 0; j < trains.Length; j++)
+                Console.WriteLine($"Enter data for train {i + 1}:");
+                trains[i] = TrainFactory();
+            }
+
+            return trains;
+        }
+
+        internal static void SortTrains(Train[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++) 
+            {
+                int minNumber = array[i].Number;
+                int minNumberIndex = i;
+
+                for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (trains[i].Number <= trains[j].Number)
+                    if (array[j].Number < minNumber)
                     {
-                        Train temp = trains[i];
-                        trains[i] = trains[j];
-                        trains[j] = temp;
+                        minNumber = array[j].Number;
+                        minNumberIndex = j;
                     }
+                }
+
+                if (minNumberIndex != i)
+                {
+                    Train temp = array[i];
+                    array[i] = array[minNumberIndex];
+                    array[minNumberIndex] = temp;
                 }
             }
         }
 
-        internal static void ShowArray(Train[] trains)
+        internal static void ShowTrains(Train[] array)
         {
             Console.WriteLine("The train's schedule");
-            foreach (Train train in trains)
+            foreach (Train train in array)
             {
                 Console.WriteLine(train);
             }
@@ -107,18 +130,12 @@ namespace Train
         {
             const int TrainsNumber = 8;
             //Create and fill train's array
-            Train[] trains = new Train[TrainsNumber];
-            Console.WriteLine($"Enter the data for {TrainsNumber} trains");
-            for (int i = 0; i < trains.Length; i++)
-            {
-                Console.WriteLine($"Enter data for train {i + 1}:");
-                trains[i] = TrainFactory();
-            }
+            Train[] trains = CreateTrainsSchedule(TrainsNumber);
             //Sort array
-            SortArray(trains);
+            SortTrains(trains);
             //Show array
             Console.WriteLine();
-            ShowArray(trains);
+            ShowTrains(trains);
             //Show train with entered bumber
             Console.WriteLine();
             trainWithNumberInfo(trains);
