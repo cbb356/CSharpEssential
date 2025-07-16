@@ -2,39 +2,6 @@
 {
     internal class TrainHelpers
     {
-        internal static void ShowTrains(Train[] array)
-        {
-            Console.WriteLine("The train's schedule");
-            foreach (Train train in array)
-            {
-                Console.WriteLine(train);
-            }
-        }
-
-        internal static void SortTrains(Train[] array)
-        {
-            for (int i = 0; i < array.Length - 1; i++)
-            {
-                int minNumber = array[i].Number;
-                int minNumberIndex = i;
-
-                for (int j = i + 1; j < array.Length; j++)
-                {
-                    if (array[j].Number < minNumber)
-                    {
-                        minNumber = array[j].Number;
-                        minNumberIndex = j;
-                    }
-                }
-
-                if (minNumberIndex != i)
-                {
-                    Train temp = array[i];
-                    array[i] = array[minNumberIndex];
-                    array[minNumberIndex] = temp;
-                }
-            }
-        }
         internal static Train TrainFactory()
         {
             string trainDestination;
@@ -74,7 +41,74 @@
             return new Train(trainDestination, trainNumber, trainDepartureTime);
         }
 
-        internal static void trainWithNumberInfo(Train[] trains)
+        internal static Train[] CreateTrainsSchedule(int TrainsNumber)
+        {
+            Train[] trains = new Train[TrainsNumber];
+
+            Console.WriteLine($"Enter the data for {TrainsNumber} trains");
+            for (int i = 0; i < trains.Length; i++)
+            {
+                Console.WriteLine($"Enter data for train {i + 1}:");
+                trains[i] = TrainFactory();
+            }
+
+            return trains;
+        }
+
+        internal static Train[] GenerateTrainsSchedule(int TrainsNumber)
+        {
+            Train[] trains = new Train[TrainsNumber];
+            Random random = new Random();
+
+            for (int i = 0; i < trains.Length; i++)
+            {
+                string destination = $"Destination_{i + 1}";
+                int number = random.Next(1, 1000);
+                int hour = random.Next(0, 24); // from 0 to 23
+                int minute = random.Next(0, 60); // from 0 to 59
+                TimeOnly departureTime = new TimeOnly(hour, minute);
+                trains[i] = new Train(destination, number, departureTime);
+            }
+
+
+            return trains;
+        }
+
+        internal static void SortTrains(Train[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                int minNumber = array[i].Number;
+                int minNumberIndex = i;
+
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j].Number < minNumber)
+                    {
+                        minNumber = array[j].Number;
+                        minNumberIndex = j;
+                    }
+                }
+
+                if (minNumberIndex != i)
+                {
+                    Train temp = array[i];
+                    array[i] = array[minNumberIndex];
+                    array[minNumberIndex] = temp;
+                }
+            }
+        }
+
+        internal static void ShowTrains(Train[] array)
+        {
+            Console.WriteLine("The train's schedule");
+            foreach (Train train in array)
+            {
+                Console.WriteLine(train);
+            }
+        }
+
+        internal static void ShowTrainWithNumber(Train[] trains)
         {
             //Show the train with entered number
             int trainNumberToFind;
@@ -98,20 +132,6 @@
             {
                 Console.WriteLine($"The train with number {trainNumberToFind} has not been found");
             }
-        }
-
-        internal static Train[] CreateTrainsSchedule(int TrainsNumber)
-        {
-            Train[] trains = new Train[TrainsNumber];
-
-            Console.WriteLine($"Enter the data for {TrainsNumber} trains");
-            for (int i = 0; i < trains.Length; i++)
-            {
-                Console.WriteLine($"Enter data for train {i + 1}:");
-                trains[i] = TrainFactory();
-            }
-
-            return trains;
         }
     }
 }

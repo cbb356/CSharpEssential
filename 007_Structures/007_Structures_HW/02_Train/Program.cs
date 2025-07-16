@@ -9,22 +9,23 @@
      * номер якого введено з клавіатури (якщо таких поїздів немає, вивести відповідне повідомлення). 
      */
     
-    internal class Program : TrainHelpers
+    internal class Program
     {
         static void Main(string[] args)
         {
             const int TrainsNumber = 8;
             //Create and fill train's array
-            Train[] trains = CreateTrainsSchedule(TrainsNumber);
+            Train[] trains = TrainHelpers.CreateTrainsSchedule(TrainsNumber);
+            //Create and fill random train's array
+            //Train[] trains = TrainHelpers.GenerateTrainsSchedule(TrainsNumber);
             //Sort array
-            SortTrains(trains);
+            TrainHelpers.SortTrains(trains);
             //Show array
             Console.WriteLine();
-            ShowTrains(trains);
+            TrainHelpers.ShowTrains(trains);
             //Show train with entered bumber
             Console.WriteLine();
-            trainWithNumberInfo(trains);
-
+            TrainHelpers.ShowTrainWithNumber(trains);
 
             // Delay.
             Console.ReadKey();
