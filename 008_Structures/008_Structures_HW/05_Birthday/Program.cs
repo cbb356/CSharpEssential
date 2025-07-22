@@ -13,7 +13,7 @@
         {
             DateTime birthday;
 
-            Console.WriteLine("Enter your birthday (like 01.01.2000):");
+            Console.WriteLine("Enter your date of birth (as 01.01.2000):");
             while(!DateTime.TryParse(Console.ReadLine(), out birthday))
             {
                 Console.WriteLine("You entered incorrect date. Try again");
