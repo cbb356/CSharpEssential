@@ -15,8 +15,27 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Post director = Post.Director;
+            Post manager = Post.Manager;
+            Post worker = Post.Worker;
+            Post intern = Post.Intern;
+            int lastMonthWorkHours;
 
+            lastMonthWorkHours = 210;
+            Console.WriteLine($"The {director} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(director, lastMonthWorkHours)}");
+            Console.WriteLine($"The {manager} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(manager, lastMonthWorkHours)}");
+            Console.WriteLine($"The {worker} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(worker, lastMonthWorkHours)}");
+            Console.WriteLine($"The {intern} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(intern, lastMonthWorkHours)}");
+            lastMonthWorkHours = 185;
+            Console.WriteLine($"The {director} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(director, lastMonthWorkHours)}");
+            Console.WriteLine($"The {manager} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(manager, lastMonthWorkHours)}");
+            Console.WriteLine($"The {worker} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(worker, lastMonthWorkHours)}");
+            Console.WriteLine($"The {intern} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(intern, lastMonthWorkHours)}");
+            lastMonthWorkHours = 150;
+            Console.WriteLine($"The {director} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(director, lastMonthWorkHours)}");
+            Console.WriteLine($"The {manager} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(manager, lastMonthWorkHours)}");
+            Console.WriteLine($"The {worker} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(worker, lastMonthWorkHours)}");
+            Console.WriteLine($"The {intern} who had worked {lastMonthWorkHours} hours last month will obtain the bonus payment: {Accountant.AskForBonus(intern, lastMonthWorkHours)}");
             //Delay
             Console.ReadKey();
         }
