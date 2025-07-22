@@ -3,10 +3,10 @@
 {
     public enum PrintColor
     {
-        Red,
-        Green,
-        Blue,
-        Yellow
+        Red = 1,
+        Green = 2,
+        Blue = 3,
+        Yellow = 4
     }
 
     internal static class Printer
