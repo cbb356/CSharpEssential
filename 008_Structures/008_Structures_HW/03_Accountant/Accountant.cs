@@ -14,5 +14,14 @@
         {
             return (int)worker < hours;
         }
+
+        public static void ShowBonus(Post worker, int hours)
+        {
+            Console.Write($"The {worker} who had worked {hours} hours last month ");
+            if (AskForBonus(worker, hours))
+                Console.WriteLine($"will obtain the bonus payment");
+            else
+                Console.WriteLine($"won't obtain the bonus payment");
+        }
     }
 }
