@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36202.13 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Birthday", "05_Birthday\05_Birthday.csproj", "{23ED91ED-FA78-491F-8931-518810012FF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_ColorPrint", "ColorPrint\02_ColorPrint.csproj", "{52F886F0-D7BA-4FFE-BE58-C2BE0D69ED83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_ColorPrint", "02_ColorPrint\02_ColorPrint.csproj", "{52F886F0-D7BA-4FFE-BE58-C2BE0D69ED83}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Accountant", "03_Accountant\03_Accountant.csproj", "{CA869219-7CC7-4991-A5BE-79BD155DF33F}"
 EndProject
