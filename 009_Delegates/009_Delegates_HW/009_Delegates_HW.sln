@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Mean", "05_Mean\05_Mean.csproj", "{811AC391-6BB6-4C42-8329-66BB4FB33E02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Arithmetic", "02_Arithmetic\02_Arithmetic.csproj", "{D906FF90-1545-4DE5-9232-0FB5E5318EC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_DelegatesArray", "03_DelegatesArray\03_DelegatesArray.csproj", "{A16BED9E-6B0A-4897-8A0A-4A0E64C415DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{811AC391-6BB6-4C42-8329-66BB4FB33E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{811AC391-6BB6-4C42-8329-66BB4FB33E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{811AC391-6BB6-4C42-8329-66BB4FB33E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D906FF90-1545-4DE5-9232-0FB5E5318EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D906FF90-1545-4DE5-9232-0FB5E5318EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D906FF90-1545-4DE5-9232-0FB5E5318EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D906FF90-1545-4DE5-9232-0FB5E5318EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A16BED9E-6B0A-4897-8A0A-4A0E64C415DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A16BED9E-6B0A-4897-8A0A-4A0E64C415DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A16BED9E-6B0A-4897-8A0A-4A0E64C415DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A16BED9E-6B0A-4897-8A0A-4A0E64C415DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
