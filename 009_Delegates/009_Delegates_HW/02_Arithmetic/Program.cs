@@ -58,7 +58,7 @@ class Program
                 break;
             default:
                 Console.WriteLine("Unknown operation");
-                Console.WriteLine("Enter the arithmetic operation (+, -, *, /) or exit:");
+                Console.WriteLine("Enter the arithmetic operation (+, -, *, /):");
                 break;
         }
 
