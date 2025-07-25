@@ -4,9 +4,9 @@
  * і повертає середнє арифметичне цих аргументів.
  */
 
-namespace Mean;
+namespace Average;
 
-public delegate double Mean (int x, int y, int z);
+public delegate double Average (int x, int y, int z);
 
 class Program
 {
@@ -16,14 +16,16 @@ class Program
         int b = 2;
         int c = 4;
 
-        Mean mean = delegate(int x, int y, int z)
+        Average average = delegate(int x, int y, int z)
         {
             return (double)(x + y + z) / 3;
         };
             
-        Console.WriteLine($"The mean of numbers {a}, {b}, {c}: {mean(a, b, c):f4}");
-        
-        //Delay
+        Console.WriteLine($"The average of numbers {a}, {b}, {c}: {average(a, b, c):f}");
+
+        // Delay.
+        Console.WriteLine();
+        Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
     }
 }   

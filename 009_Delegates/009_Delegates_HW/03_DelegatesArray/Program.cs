@@ -11,6 +11,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        // Delay.
+        Console.WriteLine();
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace Accountant
+﻿namespace Accountant
 
 /*
  * Використовуючи Visual Studio, створіть проект за шаблоном Console Application. 
