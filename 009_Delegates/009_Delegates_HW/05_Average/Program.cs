@@ -24,8 +24,7 @@ class Program
         Console.WriteLine($"The average of numbers {a}, {b}, {c}: {average(a, b, c):f}");
 
         // Delay.
-        Console.WriteLine();
-        Console.WriteLine("Press any key to continue...");
+        Console.WriteLine("\nPress any key to continue...");
         Console.ReadKey();
     }
 }   

@@ -63,8 +63,7 @@ class Program
         }
 
         // Delay.
-        Console.WriteLine();
-        Console.WriteLine("Press any key to continue...");
+        Console.WriteLine("\nPress any key to continue...");
         Console.ReadKey();
 
     }
