@@ -12,9 +12,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        int a = 1;
-        int b = 2;
-        int c = 4;
+        Random random = new Random();
+        int a = random.Next(1, 101);
+        int b = random.Next(1, 101);
+        int c = random.Next(1, 101);
 
         Average average = delegate(int x, int y, int z)
         {
