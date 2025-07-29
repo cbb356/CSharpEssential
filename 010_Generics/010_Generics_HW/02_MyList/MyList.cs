@@ -3,14 +3,14 @@
     internal class MyList<T>
     {
         private T [] array;
-        public int ArrayLength { get { return array.Length; } }
+        public int Count { get { return array.Length; } }
 
         public MyList()
         {
             array = [];
         }
 
-        public void AddItem(T item)
+        public void Add(T item)
         {
             int length = array.Length;
             T [] tempArray = new T[length + 1];

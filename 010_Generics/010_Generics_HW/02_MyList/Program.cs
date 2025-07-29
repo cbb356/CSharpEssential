@@ -13,10 +13,10 @@ namespace MyList
     {
         internal static void ShowArray<T>(MyList<T> list)
         {
-            for (int i = 0; i < list.ArrayLength; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 Console.Write(list[i]);
-                if (i < (list.ArrayLength - 1))
+                if (i < (list.Count - 1))
                 {
                     Console.Write(", ");
                 }
@@ -27,21 +27,21 @@ namespace MyList
         static void Main(string[] args)
         {
             MyList<char> charList = new MyList<char>();
-            charList.AddItem('a');
-            charList.AddItem('b');
-            charList.AddItem('c');
+            charList.Add('a');
+            charList.Add('b');
+            charList.Add('c');
             ShowArray(charList);
 
             MyList<string> stringList = new MyList<string>();
-            stringList.AddItem("first");
-            stringList.AddItem("second");
-            stringList.AddItem("third");
+            stringList.Add("first");
+            stringList.Add("second");
+            stringList.Add("third");
             ShowArray(stringList);
 
             MyList<int> intList = new MyList<int>();
-            intList.AddItem(1);
-            intList.AddItem(2);
-            intList.AddItem(3);
+            intList.Add(1);
+            intList.Add(2);
+            intList.Add(3);
             ShowArray(intList);
         }
     }
