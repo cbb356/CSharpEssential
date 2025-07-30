@@ -11,7 +11,10 @@ namespace Bonus_Factorymethod
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine($"Int instance: {MyClass<int>.FactoryMethod()}");
+            Console.WriteLine($"Double instance: {MyClass<double>.FactoryMethod()}");
+            Console.WriteLine($"Char instance: {MyClass<char>.FactoryMethod()}");
+            Console.WriteLine($"ClassExample instance: {MyClass<ClassExample>.FactoryMethod()}");
         }
     }
 }
