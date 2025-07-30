@@ -1,4 +1,4 @@
-﻿namespace MyList
+﻿namespace MyListExtended
 {
     internal class MyList<T>
     {
