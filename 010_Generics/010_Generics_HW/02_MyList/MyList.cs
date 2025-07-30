@@ -3,22 +3,35 @@
     internal class MyList<T>
     {
         private T [] array;
-        public int Count { get { return array.Length; } }
+        private int size;
+        public int Count { get { return size; } }
 
         public MyList()
         {
             array = [];
+            size = 0;
         }
 
         public void Add(T item)
         {
-            int length = array.Length;
-            T [] tempArray = new T[length + 1];
+            if (size == array.Length)
+            {
+                IncreaseCapacity();
+            }
+            array[size] = item;
+            size++;
+        }
+
+        private void IncreaseCapacity()
+        {
+            // Define new capacity
+            int newCapacity = array.Length == 0 ? 4 : array.Length * 2;
+            // Change array capacity
+            T[] tempArray = new T[newCapacity];
             for (int i = 0; i < array.Length; i++)
             {
                 tempArray[i] = array[i];
             }
-            tempArray[length] = item;
             array = tempArray;
         }
 

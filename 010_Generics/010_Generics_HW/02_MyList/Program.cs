@@ -13,6 +13,11 @@ namespace MyList
     {
         internal static void ShowArray<T>(MyList<T> list)
         {
+            if (list.Count == 0)
+            {
+                Console.WriteLine("Array is empty");
+                return;
+            }
             for (int i = 0; i < list.Count; i++)
             {
                 Console.Write(list[i]);
@@ -43,6 +48,9 @@ namespace MyList
             intList.Add(2);
             intList.Add(3);
             ShowArray(intList);
+
+            MyList<long> longList = new MyList<long>();
+            ShowArray(longList);
         }
     }
 }
