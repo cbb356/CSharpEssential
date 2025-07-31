@@ -13,11 +13,16 @@ namespace MagicBag
         static void Main(string[] args)
         {
             MagicBag magicBag = new MagicBag();
-            magicBag.GetGift("Elf");
-            magicBag.GetGift("Dwarf");
-            magicBag.GetGift("Wizard");
-            magicBag.GetGift("Hobbit");
-            magicBag.GetGift("Elf");
+            Elf elf = new Elf();
+            Dwarf dwarf = new Dwarf();
+            Human human = new Human();
+            Orc orc = new Orc();
+
+            magicBag.Open(elf);
+            magicBag.Open(dwarf);
+            magicBag.Open(human);
+            magicBag.Open(elf);     // Repeated - no gift!
+            //magicBag.Open(orc);     // Error - not IGiftableCreature
         }
     }
 }

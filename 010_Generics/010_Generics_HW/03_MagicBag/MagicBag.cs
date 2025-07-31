@@ -2,34 +2,22 @@
 {
     internal class MagicBag
     {
-        private Dictionary<string, string> creatures = new Dictionary<string, string>
-            {
-                {"Elf", "Bow" },
-                {"Dwarf", "Axe" },
-                {"Human", "Sword" },
-                {"Orc", "Polearm" },
-                {"Wizard", "Wand" }
-            };
+        private Dictionary<string, DateTime> gifts = new Dictionary<string, DateTime>();
 
-        private Dictionary<string, DateTimeOffset> gifts = new Dictionary<string, DateTimeOffset>();
-
-        public void GetGift(string creature)
+        public void Open<T>(T creature) where T : IGiftableCreature
         {
-            if (creatures.ContainsKey(creature))
+            string creatureName = creature.Name;
+            string gift = creature.Gift;
+            DateTime today = DateTime.Today;
+
+            if (gifts.ContainsKey(creatureName) && gifts[creatureName].Date == today)
             {
-                if (!gifts.ContainsKey(creature) || gifts.ContainsKey(creature) && gifts[creature].Date < DateTimeOffset.Now.Date)
-                {
-                    gifts[creature] = DateTimeOffset.Now;
-                    Console.WriteLine($"The {creature.ToLower()} has a new {creatures[creature].ToLower()} as a gift ");
-                }
-                else
-                {
-                    Console.WriteLine($"The {creature.ToLower()} already has received the gift today!");
-                }
+                Console.WriteLine($"The {creatureName} already has got the gift today!");
             }
             else
             {
-                Console.WriteLine("There are no such creature!");
+                gifts[creatureName] = today;
+                Console.WriteLine($"The {creatureName} has a new {gift} as a gift ");
             }
         }
     }
