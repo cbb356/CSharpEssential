@@ -12,7 +12,12 @@ namespace MagicBag
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            MagicBag magicBag = new MagicBag();
+            magicBag.GetGift("Elf");
+            magicBag.GetGift("Dwarf");
+            magicBag.GetGift("Wizard");
+            magicBag.GetGift("Hobbit");
+            magicBag.GetGift("Elf");
         }
     }
 }
