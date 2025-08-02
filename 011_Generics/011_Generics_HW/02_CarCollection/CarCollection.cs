@@ -23,7 +23,7 @@ namespace CarCollection
                 if (index >= 0 && index < cars.Count)
                     return cars[index];
                 else
-                    return null;
+                    return default;
             }
         }
 

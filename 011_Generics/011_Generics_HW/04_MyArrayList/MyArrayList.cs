@@ -1,18 +1,18 @@
-﻿namespace MyList
+﻿namespace MyArrayList
 {
-    internal class MyList<T>
+    internal class MyArrayList
     {
-        private T[] array;
+        private object[] array;
         private int size;
         public int Count { get { return size; } }
 
-        public MyList()
+        public MyArrayList()
         {
             array = [];
             size = 0;
         }
 
-        public void Add(T item)
+        public void Add(object item)
         {
             if (size == array.Length)
             {
@@ -27,7 +27,7 @@
             // Define new capacity
             int newCapacity = array.Length == 0 ? 4 : array.Length * 2;
             // Change array capacity
-            T[] tempArray = new T[newCapacity];
+            object[] tempArray = new object[newCapacity];
             for (int i = 0; i < array.Length; i++)
             {
                 tempArray[i] = array[i];
@@ -35,7 +35,7 @@
             array = tempArray;
         }
 
-        public T this[int index]
+        public object this[int index]
         {
             get
             {
