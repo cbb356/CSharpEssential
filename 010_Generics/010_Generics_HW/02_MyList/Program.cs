@@ -51,6 +51,10 @@ namespace MyList
 
             MyList<long> longList = new MyList<long>();
             ShowArray(longList);
+
+            // Delay.
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
         }
     }
 }

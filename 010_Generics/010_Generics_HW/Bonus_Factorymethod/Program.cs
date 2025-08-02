@@ -15,6 +15,10 @@ namespace Bonus_Factorymethod
             Console.WriteLine($"Double instance: {MyClass<double>.FactoryMethod()}");
             Console.WriteLine($"Char instance: {MyClass<char>.FactoryMethod()}");
             Console.WriteLine($"ClassExample instance: {MyClass<ClassExample>.FactoryMethod()}");
+
+            // Delay.
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
         }
     }
 }

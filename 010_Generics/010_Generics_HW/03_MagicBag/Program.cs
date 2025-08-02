@@ -23,6 +23,10 @@ namespace MagicBag
             magicBag.Open(human);
             magicBag.Open(elf);     // Repeated - no gift!
             //magicBag.Open(orc);     // Error - not IGiftableCreature
+
+            // Delay.
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
         }
     }
 }
