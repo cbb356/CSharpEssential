@@ -7,17 +7,36 @@
  * для отримання загальної кількості пар елементів.
  */
 
+using System;
+
 namespace MyDictionary
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-    
+            MyDictionary<string, int> customDict = new MyDictionary<string, int>();
 
-            // Delay.
-            Console.WriteLine("\nPress any key to continue...");
+            // Adding key-value pairs using Add method
+            customDict.Add("apple", 5);
+            customDict.Add("banana", 3);
+            customDict.Add("orange", 8);
+            Console.WriteLine($"Added: apple = 5, banana = 3, orange = 8");
+            Console.WriteLine($"Count: {customDict.Count}\n");
+
+            // Using indexer to add and access values
+            customDict["grape"] = 12;
+            customDict["apple"] = 10; // Update existing value
+            Console.WriteLine($"Set grape=12, updated apple=10");
+            Console.WriteLine($"Count: {customDict.Count}");
+            Console.WriteLine($"apple = {customDict["apple"]}");
+            Console.WriteLine($"grape = {customDict["grape"]}\n");
+
+            // Trying adding the item with existing key
+            customDict.Add("apple", 15); //Should be an error
+            
+            // Delay
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
         }
     }

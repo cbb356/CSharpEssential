@@ -2,39 +2,70 @@
 {
     internal class MyDictionary<TKey, TValue>
     {
-        private List<Entry<TKey, TValue>> myDictionary = new List<Entry<TKey, TValue>>();
+        private List<Entry<TKey, TValue>> items;
 
-        private struct Entry<TKey, TValue>
+        public MyDictionary() 
         {
-            public TKey Key { get; set; }
-            public TValue Value { get; set; }
+            items = new List<Entry<TKey, TValue>>();
+        }
 
-            public Entry<TKey, TValue>(TKey key, TValue value)  
+        private readonly struct Entry<TKey, TValue>
+        {
+            public TKey Key { get; }
+            public TValue Value { get; }
+
+            public Entry(TKey key, TValue value)  
             {
                 Key = key;
                 Value = value;
             }
         }
 
-        public int Count
-        {
-            get { return myDictionary.Count; }
-        }
 
         public void Add(TKey key, TValue value)
         {
-            myDictionary.Add(new Entry<TKey, TValue>(key, value));
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].Key.Equals(key))
+                {
+                    Console.WriteLine($"Error! An item with the same key has already been added. Key: {key}");
+                    return;
+                }
+            }
+
+            items.Add(new Entry<TKey, TValue>(key, value));
         }
 
-        public Entry<TKey, TValue> this[int index]
+        public TValue this[TKey key]
         {
             get
             {
-                if (index >= 0 && index < myDictionary.Count)
-                    return myDictionary[index];
-                else
-                    return default;
+                for (int i = 0; i < items.Count; i++)
+                {
+                    if (items[i].Key.Equals(key))
+                    {
+                        return items[i].Value;
+                    }
+                }
+                return default;
             }
+            set
+            {
+                for (int i = 0; i < items.Count; i++)
+                {
+                    if (items[i].Key.Equals(key))
+                    {
+                        items[i] = new Entry<TKey, TValue>(key, value);
+                        return;
+                    }
+                }
+                items.Add(new Entry<TKey, TValue>(key, value));
+                return;
+            }
+        }
+        public int Count
+        {
+            get { return items.Count; }
         }
     }
 }

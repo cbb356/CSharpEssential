@@ -15,13 +15,13 @@ namespace CarCollection
         {
             CarCollection carsFleet = new CarCollection();
 
-            // Add some cars
+            // Adding some cars
             carsFleet.Add("Mercedes", 2020);
             carsFleet.Add("Toyota", 2019);
             carsFleet.Add("Ford", 2016);
             Console.WriteLine($"There are {carsFleet.Count} cars in the fleet");
 
-            // Show cars in the fleet
+            // Showing cars in the fleet
             for (int i = 0; i < carsFleet.Count; i++)
             {
                 Console.WriteLine(carsFleet[i].ToString());
@@ -33,7 +33,7 @@ namespace CarCollection
             Console.WriteLine($"There are {carsFleet.Count} cars in the fleet");
 
             // Delay.
-            Console.WriteLine("\nPress any key to continue...");
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
         }
     }

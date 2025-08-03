@@ -22,7 +22,7 @@ namespace MyClass
             //Console.WriteLine($"AbstractClass {MyClass<AbstractClass>.FactoryMethod()} created");
 
             // Delay.
-            Console.WriteLine("\nPress any key to continue...");
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
         }
     }

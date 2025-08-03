@@ -13,16 +13,21 @@ namespace ArrayListRefStruct
         static void Main(string[] args)
         {
             ArrayList arrayList = new ArrayList();
+            
+            // Adding array elements
             arrayList.Add(1);
+            arrayList.Add(1.25);
             arrayList.Add("test");
             arrayList.Add(new Person("Alice", 25));
 
+            // Showing array elements
             for (int i = 0; i < arrayList.Count; i++)
             {
                 Console.WriteLine($"The array element at index {i} has type '{arrayList[i].GetType().Name}' and value '{arrayList[i].ToString()}'");
             }
             Console.WriteLine();
 
+            // Calculating sum of array elements
             int sum = 0;
             for (int i = 0; i < arrayList.Count; i++)
             {
@@ -32,7 +37,7 @@ namespace ArrayListRefStruct
             Console.WriteLine($"The total sum of elements: {sum}");
 
             // Delay.
-            Console.WriteLine("\nPress any key to continue...");
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
         }
     }
