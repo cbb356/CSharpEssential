@@ -2,28 +2,16 @@
 {
     internal class MyDictionary<TKey, TValue>
     {
-        private List<Entry<TKey, TValue>> items;
+        private List<KeyValuePair<TKey, TValue>> items;
 
         public MyDictionary() 
         {
-            items = new List<Entry<TKey, TValue>>();
+            items = new List<KeyValuePair<TKey, TValue>>();
         }
-
-        private readonly struct Entry<TKey, TValue>
-        {
-            public TKey Key { get; }
-            public TValue Value { get; }
-
-            public Entry(TKey key, TValue value)  
-            {
-                Key = key;
-                Value = value;
-            }
-        }
-
 
         public void Add(TKey key, TValue value)
         {
+            
             for (int i = 0; i < items.Count; i++)
             {
                 if (items[i].Key.Equals(key))
@@ -33,7 +21,7 @@
                 }
             }
 
-            items.Add(new Entry<TKey, TValue>(key, value));
+            items.Add(new KeyValuePair<TKey, TValue>(key, value));
         }
 
         public TValue this[TKey key]
@@ -55,11 +43,11 @@
                 {
                     if (items[i].Key.Equals(key))
                     {
-                        items[i] = new Entry<TKey, TValue>(key, value);
+                        items[i] = new KeyValuePair<TKey, TValue>(key, value);
                         return;
                     }
                 }
-                items.Add(new Entry<TKey, TValue>(key, value));
+                items.Add(new KeyValuePair<TKey, TValue>(key, value));
                 return;
             }
         }

@@ -15,10 +15,10 @@ namespace ArrayListRefStruct
             ArrayList arrayList = new ArrayList();
             
             // Adding array elements
-            arrayList.Add(1);
-            arrayList.Add(1.25);
-            arrayList.Add("test");
-            arrayList.Add(new Person("Alice", 25));
+            arrayList.Add(1);   // Value type, int
+            arrayList.Add("test");  // Reference type, string
+            arrayList.Add(1.25);    // Value type, double
+            arrayList.Add(new Person("Alice", 25)); // Reference type, Person
 
             // Showing array elements
             for (int i = 0; i < arrayList.Count; i++)
@@ -32,7 +32,8 @@ namespace ArrayListRefStruct
             for (int i = 0; i < arrayList.Count; i++)
             {
                 Console.WriteLine($"The array element at index {i} has type '{arrayList[i].GetType().Name}' and value '{arrayList[i].ToString()}'");
-                sum += (int)arrayList[i]; //Runtime InvalidCastException on non-integer element
+                //This would cause a runtime InvalidCastException on non-integer element
+                //sum += (int)arrayList[i]; 
             }
             Console.WriteLine($"The total sum of elements: {sum}");
 

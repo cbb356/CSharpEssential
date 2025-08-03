@@ -25,18 +25,18 @@ namespace MyDictionary
             Console.WriteLine($"apple = {customDict["apple"]}");
             Console.WriteLine($"banana = {customDict["banana"]}");
             Console.WriteLine($"orange = {customDict["orange"]}\n");
+            
+            // Trying adding the item with existing key
+            customDict.Add("apple", 15); //Should be an error
 
             // Using indexer to add and access values
             customDict["grape"] = 12;   // Add new value
             customDict["apple"] = 10;   // Update existing value
-            Console.WriteLine($"Count: {customDict.Count}");
+            Console.WriteLine($"\nCount: {customDict.Count}");
             Console.WriteLine($"apple = {customDict["apple"]}");
             Console.WriteLine($"banana = {customDict["banana"]}");
             Console.WriteLine($"orange = {customDict["orange"]}");
             Console.WriteLine($"grape = {customDict["grape"]}\n");
-
-            // Trying adding the item with existing key
-            customDict.Add("apple", 15); //Should be an error
             
             // Delay
             Console.WriteLine("\nPress any key to exit...");
