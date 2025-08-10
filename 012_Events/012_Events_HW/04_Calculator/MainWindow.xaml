@@ -5,9 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="204" Width="525">
+        Title="Calculator" Height="150" Width="300">
     <Grid>
-        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="185,95,0,0" Name="button1" VerticalAlignment="Top" Width="120" Click="button1_Click" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="76,47,0,0" Name="textBox1" VerticalAlignment="Top" Width="338" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Input fields -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,10,0,0">
+            <TextBox Name="FirstOperandTextBox" Text="" Width="128" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Name="SecondOperandTextBox" Margin="10,0,0,0" Text="" Width="128" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </StackPanel>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,5,0,0">
+            <Button x:Name="AddButton" Content="+" Width="59" Margin="0,0,10,0" Click="AddButton_Click"/>
+            <Button x:Name="SubtractButton" Content="-" Width="59" Margin="0,0,10,0" Click="SubtractButton_Click"/>
+            <Button x:Name="MultiplyButton" Content="×" Width="59" Margin="0,0,10,0" Click="MultiplyButton_Click"/>
+            <Button x:Name="DivideButton" Content="÷" Width="59" Margin="0,0,0,0" Click="DivideButton_Click"/>
+        </StackPanel>
+
+        <!-- Result and Error-->
+        <TextBlock Grid.Row="2" x:Name="ResultTextBlock"
+           FontSize="16"
+           FontWeight="Bold"
+           Margin="0,5,0,0"
+           HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="2" x:Name="ErrorTextBlock"
+           Foreground="Red"
+           FontSize="16"
+           FontWeight="Bold"
+           Margin="0,5,0,0"
+           HorizontalAlignment="Center"/>
     </Grid>
 </Window>

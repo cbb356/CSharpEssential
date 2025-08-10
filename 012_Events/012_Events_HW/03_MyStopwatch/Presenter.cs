@@ -1,4 +1,5 @@
 ﻿using System.Windows.Threading;
+using System;
 
 namespace MyStopwatch
 {
@@ -10,16 +11,16 @@ namespace MyStopwatch
         
         public Presenter(MainWindow mainWindow)
         {
-            this.model = new Model();
-            this.view = mainWindow;
+            model = new Model();
+            view = mainWindow;
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(10);
             timer.Tick += UpdateTimeDisplay;
 
-            this.view.StartEvent += new EventHandler(mainWindow_StartEvent);
-            this.view.StopEvent += new EventHandler(mainWindow_StopEvent);
-            this.view.ResetEvent += new EventHandler(mainWindow_ResetEvent);
+            view.StartEvent += new EventHandler(MainWindow_StartEvent);
+            view.StopEvent += new EventHandler(MainWindow_StopEvent);
+            view.ResetEvent += new EventHandler(MainWindow_ResetEvent);
         }
 
         private void UpdateTimeDisplay(object sender, EventArgs e)
@@ -27,23 +28,23 @@ namespace MyStopwatch
             view.TimeDisplay.Text = model.GetFormattedTime();
         }
 
-        void mainWindow_StartEvent(object sender, System.EventArgs e)
+        void MainWindow_StartEvent(object sender, EventArgs e)
         {
             model.Start();
             timer.Start();
         }
 
-        void mainWindow_StopEvent(object sender, System.EventArgs e)
+        void MainWindow_StopEvent(object sender, EventArgs e)
         {
             model.Stop();
             timer.Stop();
         }
 
-        void mainWindow_ResetEvent(object sender, System.EventArgs e)
+        void MainWindow_ResetEvent(object sender, EventArgs e)
         {
             model.Reset();
             timer.Stop();
-            this.UpdateTimeDisplay(sender, e);
+            UpdateTimeDisplay(sender, e);
         }
     }
 }
