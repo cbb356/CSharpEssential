@@ -5,40 +5,92 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="150" Width="300">
-    <Grid>
+        Title="Calculator" Height="160" Width="300"
+        ResizeMode="CanMinimize">
+    <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <!-- Input fields -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,10,0,0">
-            <TextBox Name="FirstOperandTextBox" Text="" Width="128" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox Name="SecondOperandTextBox" Margin="10,0,0,0" Text="" Width="128" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        </StackPanel>
+        <Grid Grid.Row="0" Margin="0,0,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-        <!-- Buttons -->
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,5,0,0">
-            <Button x:Name="AddButton" Content="+" Width="59" Margin="0,0,10,0" Click="AddButton_Click"/>
-            <Button x:Name="SubtractButton" Content="-" Width="59" Margin="0,0,10,0" Click="SubtractButton_Click"/>
-            <Button x:Name="MultiplyButton" Content="×" Width="59" Margin="0,0,10,0" Click="MultiplyButton_Click"/>
-            <Button x:Name="DivideButton" Content="÷" Width="59" Margin="0,0,0,0" Click="DivideButton_Click"/>
-        </StackPanel>
+            <Label Grid.Column="0" Content="x:" 
+                   VerticalAlignment="Center" Margin="0,0,2,0" 
+                   FontSize="14"/>
+            <TextBox Grid.Column="1" 
+                     Name="FirstOperandTextBox" Text="0"
+                     FontSize="14" Padding="5" Height="30" 
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Right"
+                     ToolTip="Enter first number"/>
+            <Button Grid.Column="2" 
+                    x:Name="AddButton" Content="+"
+                    Width="60" Height="30" 
+                    Margin="10,0,5,0" FontSize="14"
+                    Click="AddButton_Click"
+                    ToolTip="Add"
+                    Foreground="White" Background="#007BFF"/>
+            <Button Grid.Column="3"  
+                    x:Name="SubtractButton" Content="-"
+                    Width="60" Height="30" FontSize="14"
+                    Click="SubtractButton_Click"
+                    ToolTip="Subtract"
+                    Foreground="White" Background="#007BFF"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,0,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Content="y:" 
+                   VerticalAlignment="Center" Margin="0,0,2,0" 
+                   FontSize="14"/>
+            <TextBox Grid.Column="1" 
+                     Name="SecondOperandTextBox" Text="0"
+                     FontSize="14" Padding="5" Height="30" 
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Right"
+                     ToolTip="Enter second number"/>
+            <Button Grid.Column="2" 
+                    x:Name="MultiplyButton" Content="*"
+                    Width="60" Height="30" 
+                    Margin="10,0,5,0" FontSize="14"
+                    Click="MultiplyButton_Click"
+                    ToolTip="Multiply"
+                    Foreground="White" Background="#007BFF"/>
+            <Button Grid.Column="3"  
+                    x:Name="DivideButton" Content="/"
+                    Width="60" Height="30" FontSize="14"
+                    Click="DivideButton_Click"
+                    ToolTip="Divide"
+                    Foreground="White" Background="#007BFF"/>
+        </Grid>
 
         <!-- Result and Error-->
         <TextBlock Grid.Row="2" x:Name="ResultTextBlock"
+           Text="Result:"
            FontSize="16"
            FontWeight="Bold"
-           Margin="0,5,0,0"
+           Margin="0,7,0,0"
            HorizontalAlignment="Center"/>
 
         <TextBlock Grid.Row="2" x:Name="ErrorTextBlock"
            Foreground="Red"
            FontSize="16"
            FontWeight="Bold"
-           Margin="0,5,0,0"
+           Margin="0,7,0,0"
            HorizontalAlignment="Center"/>
     </Grid>
 </Window>
