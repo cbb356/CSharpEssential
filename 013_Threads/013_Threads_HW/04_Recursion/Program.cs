@@ -4,8 +4,6 @@
  * Кожен новий виклик методу виконується окремому потоці.
  */
 
-using System.Diagnostics.Metrics;
-
 namespace Recursion
 {
 
@@ -17,12 +15,14 @@ namespace Recursion
             int hash = Thread.CurrentThread.GetHashCode();
 
             Console.WriteLine($"Entering {depth} on Thread {hash}");
+            Thread.Sleep(500);
             if (depth > 1)
             {
                 Thread newThread = new Thread(() => Recursive(depth - 1));
                 newThread.Start();
                 newThread.Join();
             }
+            Thread.Sleep(500);
             Console.WriteLine($"Exiting {depth} on Thread {hash}");
         }
         static void Main(string[] args)
@@ -30,7 +30,7 @@ namespace Recursion
             Recursive(MaxDepth);
 
             // Delay
-            Console.WriteLine("Press any key to exit...");
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
         }
     }
