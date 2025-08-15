@@ -71,8 +71,8 @@
                     int bodyY = y - i;
                     if (bodyY >= 0 && bodyY < consoleHeight)
                     {
-                        Console.SetCursorPosition(x, bodyY);
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.SetCursorPosition(x, bodyY);
                         Console.Write(GetRandomChar());
                     }
                 }
