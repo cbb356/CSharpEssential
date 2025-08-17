@@ -12,9 +12,53 @@ namespace MyList
 {
     internal class Program
     {
+        internal static void ShowArray<T>(MyList<T> list)
+        {
+            if (list.Count == 0)
+            {
+                Console.WriteLine("Array is empty");
+                return;
+            }
+            bool isFirst = true;
+            foreach (var item in list)
+            {
+                if (isFirst)
+                {
+                    Console.Write(item);
+                    isFirst = false;
+                }
+                else
+                {
+                    Console.Write($", {item}");
+                }
+            }
+            Console.WriteLine(); 
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            MyList<char> charList = new MyList<char>();
+            charList.Add('a');
+            charList.Add('b');
+            charList.Add('c');
+            ShowArray(charList);
+
+            MyList<string> stringList = new MyList<string>("first", "second");
+            stringList.Add("third");
+            ShowArray(stringList);
+
+            MyList<int> intList = new MyList<int>();
+            intList.Add(1);
+            intList.Add(2);
+            intList.Add(3);
+            ShowArray(intList);
+
+            MyList<long> longList = new MyList<long>();
+            ShowArray(longList);
+
+            // Delay.
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
         }
     }
 }
