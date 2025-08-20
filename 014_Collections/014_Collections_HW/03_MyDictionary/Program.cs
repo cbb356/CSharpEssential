@@ -42,7 +42,7 @@ namespace MyDictionary
             // Dictionary iteration using foreach loop
             foreach (var item in customDict)
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"{item.Key} = {item.Value}");
             }
 
             // Delay
