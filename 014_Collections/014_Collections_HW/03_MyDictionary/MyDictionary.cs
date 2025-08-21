@@ -33,10 +33,7 @@ namespace MyDictionary
 
         public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
         {
-            for (int i = 0; i < items.Count; i++)
-            {
-                yield return items[i];
-            }
+            return items.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
